@@ -5,6 +5,9 @@
   font-family: 'Oxygen', sans-serif;
   user-select: none;
 }
+.App{
+  // height: 100vh;
+}
 
 .wrapperLoader{
   outline: 5px solid white;
@@ -12,6 +15,9 @@
   position: fixed;
   top: 0;
   z-index: 999;
+}
+.topbar{
+background-color: #000;
 }
 
 .animation-rubberband {
@@ -286,6 +292,12 @@ button{
 }
 
 @media (hover: none) {
+  .cardWork{
+    height: 318px;
+    transform: skew(0);
+  }
+}
+@media screen and (max-width: 768px) {
   .cardWork{
     height: 318px;
     transform: skew(0);

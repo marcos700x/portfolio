@@ -59,7 +59,7 @@ function App() {
               {/* And I also have some experience with PHP, MySQL, Firebase, Dart, Flutter, Figma and Firebase. */}
             </p>
           </div>
-          <div className="col-auto col-md-4 d-flex justify-content-start justify-content-md-center align-items-center ms-3 ms-md-0 mt-5 mt-md-0">
+          <div className="col-auto col-md-4 d-flex justify-content-start justify-content-md-center align-items-center ms-3 ms-md-0 mt-3 mt-md-0">
             <WorkCard/>
           </div>
         </div>
