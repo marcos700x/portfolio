@@ -18,7 +18,6 @@ const ScrollbarPortfolio = () => {
             scrollPercent = Math.round(element.scrollTop / (height - element.clientHeight) * 100)
             scrollbar.current.style.height = `${scrollPercent}%`;
             var buttons = document.querySelectorAll('.project-button')
-            console.log(scrollPercent)
             if (scrollPercent >= 0) buttons[0].style.backgroundColor = mainColor; else buttons[0].style.backgroundColor = '#fff'
             if (scrollPercent >= 25) buttons[1].style.backgroundColor = mainColor; else buttons[1].style.backgroundColor = '#fff'
             if (scrollPercent >= 50) buttons[2].style.backgroundColor = mainColor; else buttons[2].style.backgroundColor = '#fff'
@@ -81,7 +80,6 @@ background-color: #fff;
         &:hover{
             &::before, &::after{
                 display: block;
-                animation:  bounceInRight .5s ;
             }
         }
 
@@ -96,7 +94,7 @@ background-color: #fff;
             height: fit-content;
             padding: 8px;
             color: #000;
-            border-radius: 10px;
+            border-radius: 5px;
             background-color: inherit;
             display: none;
             font-weight: 600;
@@ -113,8 +111,6 @@ background-color: #fff;
             display: none;
         }
 
-        @keyframes bounceInRight{0%,60%,75%,90%,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:translate3d(3000px,0,0) scaleX(3);transform:translate3d(3000px,0,0) scaleX(3)}60%{opacity:1;-webkit-transform:translate3d(-25px,0,0) scaleX(1);transform:translate3d(-25px,0,0) scaleX(1)}75%{-webkit-transform:translate3d(10px,0,0) scaleX(.98);transform:translate3d(10px,0,0) scaleX(.98)}90%{-webkit-transform:translate3d(-5px,0,0) scaleX(.995);transform:translate3d(-5px,0,0) scaleX(.995)}to{-webkit-transform:translateZ(0);transform:translateZ(0)}}
-        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     }
 
     img{
