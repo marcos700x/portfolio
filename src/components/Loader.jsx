@@ -9,7 +9,7 @@ const Loader = () => {
 useEffect(() => {
     setTimeout(() => {
         setShowLoader(false)
-    }, 2500);
+    }, 1500);
 }, [])
 
   return (

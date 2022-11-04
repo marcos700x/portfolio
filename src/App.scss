@@ -1,29 +1,48 @@
-@use 'variables'as variables;
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@use 'variables' as variables;
+@use 'animations' as animations;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap');
 
 * {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Raleway', sans-serif;
   user-select: none;
-}
-.App{
-  // height: 100vh;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
 
-.wrapperLoader{
-  outline: 5px solid white;
+section{
+  min-height: 100vh;
+}
+
+.App{
+  background-image: linear-gradient(45deg,
+    #000,
+    #2b2b2b,
+    #000,
+  );
+  background-size: 200%;
+  animation: backgroundAnimation 10s ease-in-out infinite alternate-reverse;
+
+}
+
+
+.topbar {
+  height: 70px;
+  background-color: #000;
+}
+
+.wrapperLoader {
   background-color: #000;
   position: fixed;
   top: 0;
   z-index: 999;
 }
-.topbar{
-background-color: #000;
-}
+
 
 .animation-rubberband {
   animation: rubberBand .8s ease-in-out;
   display: inline-block;
-  color: #ff0000;
+  color: variables.$mainColor;
 }
 
 .animate {
@@ -34,12 +53,12 @@ background-color: #000;
 .cardWork {
   width: 190px;
   height: 120px;
-  padding: 0.5rem;
+  padding: 0.5rem ;
   background: variables.$backgroundTransparent;
   border-radius: variables.$borderRadius;
   backdrop-filter: variables.$blur;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.440);
-  border-left: 2px rgba(255, 255, 255, 0.545) outset;
+  border-bottom: variables.$backgroundTransparent;
+  border-left: variables.$backgroundTransparent outset;
   box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
   transform: skewX(10deg);
   transition: .4s;
@@ -53,11 +72,9 @@ background-color: #000;
   }
 
   h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
   }
-
-
 
   .align {
     padding: 1rem;
@@ -78,7 +95,6 @@ background-color: #000;
         box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
       }
     }
-
   }
 
   .workLink {
@@ -92,104 +108,105 @@ background-color: #000;
 
 
   }
-
-
-
 }
 
-form{
+form {
+  height: 100%;
 
-  background-color: variables.$backgroundTransparent;
-  backdrop-filter: variables.$blur;
-  border-radius: variables.$borderRadius;
 
   .customInput {
     background-color: #000;
     position: relative;
     overflow: hidden;
-    padding: 0 0 4px 0;
+    display: flex;
     z-index: 1;
-  
+
     &::before {
       content: '';
       position: absolute;
-      inset: 0 0 0 0; 
+      inset: 0 0 0 0;
       width: 110%;
       aspect-ratio: 1;
       margin: auto;
       z-index: -1;
       animation: rotate 2s linear infinite;
-      background-image: conic-gradient(
-        transparent 0deg,
-        red 90deg,
-        transparent 91deg,
+      background-image: conic-gradient(transparent 0deg,
+          red 90deg,
+          transparent 91deg,
         );
     }
 
-    .insideContainer {
+    input {
       width: 100%;
-      margin: 0;
-      display: flex;
-  
-      input{
-        width: 100%;
-        height: 55px;
-        color: #fff;
-        border: none;
-        padding: 6px 12px ;
-        font-size: 1.2rem;
-        background-color: #0a0a0a;
+      height: 60px;
+      color: #fff;
+      border: none;
+      padding: 20px;
+      // font-size: 1.2rem;
+      margin: 0 0 4px 0;
+      outline: 5px solid #000;
+      background-color: #000;
 
-      &:focus{
-        outline: none
-      }
-      &:not(:placeholder-shown){
-      &:valid{
-        outline: 4px solid rgb(0, 255, 183);
-        border-radius: 0;
-       }
-      }
-
-      }
-            
-      textarea{
-        width: 100%;
-        min-height: 60px;
-        max-height: 300px;
-        padding: 6px 12px ;
-        color: #fff;
-        border: none;
+      &:focus {
         outline: none;
-        font-size: 1.2rem;
-        background-color: #0a0a0a;
+      }
 
-        &::-webkit-resizer{
-          display: none;
+      &:not(:placeholder-shown) {
+        &:valid {
+          outline: 5px solid variables.$mainColor;
+          border-radius: 0;
         }
+      }
 
-      &:focus{
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      max-height: 500px;
+      padding: 20px;
+      margin: 0 0 4px 0;
+      color: #fff;
+      border: none;
+      outline: 5px solid #000;
+      background-color: #000;
+
+      &::-webkit-resizer {
+        display: none;
+      }
+
+      &:focus {
         outline: none
       }
-      &:not(:placeholder-shown){
-        outline: 4px solid rgb(0, 255, 183);
+
+      &:not(:placeholder-shown) {
+        outline: 4px solid variables.$mainColor;
         border-radius: 0;
       }
 
-      }
     }
   }
 
-button{
-  padding: 6px 20px;
-  font-size: 1.2rem;
-  color: #000;
-  background-color: rgb(0, 255, 183);
-  &:disabled{
-  background-color: rgb(102, 102, 102);
-  opacity: 0.5;
+  button {
+      padding: 12px 30px;
+      color: #000;
+      border: none;
+      background-color: variables.$mainColor;
+    &:disabled {
+      background-color: variables.$backgroundTransparent;
+      opacity: 0.8;
+      border: none;
+    }
   }
 }
+.aside-contact{
+  background: linear-gradient(to right, #0000009e, #0000009e), 
+  url('https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80');
+  background-size: cover;
+  background-position: center;
+
 }
+
 
 .animated-workLink {
 
@@ -201,7 +218,7 @@ button{
     height: 4px;
     position: absolute;
     bottom: -4px;
-    background-color: #ff0000;
+    background-color: variables.$mainColor;
     transition: all .5s ease-in;
     animation: dashLinkInAnimation .8s ease-in-out forwards;
     transform-origin: left;
@@ -210,98 +227,16 @@ button{
 
 
 
-@keyframes dashInAnimation {
-  0% {
-    transform: scaleX(0);
-  }
-
-  100% {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes dashOutAnimation {
-  0% {
-    transform: scaleX(1);
-  }
-
-  100% {
-    transform: scaleX(0);
-  }
-}
-
-@keyframes dashLinkInAnimation {
-  0% {
-    transform: scaleX(0);
-  }
-
-  50% {
-    transform: scaleX(1);
-  }
-
-  100% {
-    transform: scaleX(0);
-  }
-}
-
-@keyframes rubberBand {
-  0% {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1)
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, .75, 1);
-    transform: scale3d(1.25, .75, 1)
-  }
-
-  40% {
-    -webkit-transform: scale3d(.75, 1.25, 1);
-    transform: scale3d(.75, 1.25, 1)
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, .85, 1);
-    transform: scale3d(1.15, .85, 1)
-  }
-
-  65% {
-    -webkit-transform: scale3d(.95, 1.05, 1);
-    transform: scale3d(.95, 1.05, 1)
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, .95, 1);
-    transform: scale3d(1.05, .95, 1)
-  }
-
-  to {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1)
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (hover: none) {
-  .cardWork{
-    height: 318px;
-    transform: skew(0);
-  }
-}
-@media screen and (max-width: 768px) {
-  .cardWork{
+  .cardWork {
     height: 318px;
     transform: skew(0);
   }
 }
 
- 
+@media screen and (max-width: 768px) {
+  .cardWork {
+    height: 318px;
+    transform: skew(0);
+  }
+}
