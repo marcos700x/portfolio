@@ -33,7 +33,7 @@ const Portfolio = () => {
   },[])
 
   return (
-    <div className='portfolio-page'>
+    <>
       <Loader />
       <ScrollbarPortfolio/>
       <Menu/>
@@ -81,7 +81,7 @@ const Portfolio = () => {
 
           ))
         }
-    </div>
+    </>
   )
 }
 

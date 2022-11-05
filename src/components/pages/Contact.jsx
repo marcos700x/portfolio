@@ -53,7 +53,7 @@ const Contact = () => {
       <Loader />
       <Menu/>
       <ToastContainer />
-      <div className='row m-0'>
+      <div className='h-100 row m-0'>
         <div className="vh-100 p-4 col col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center aside-contact ">
           <div className="col col-12 col-md-9 d-flex flex-column">
             <h1 className="display-1 fw-bold text-light mb-3">{generateLetters("Contact", false)}</h1>
@@ -66,19 +66,19 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div id='form-section' className="vh-100 col col-12 col-lg-6 p-4 pb-lg-0">
-          <form  className=' p-0 p-lg-5 d-flex flex-column justify-content-center  gap-3' ref={form} onSubmit={sendEmail}>
-            <h1 className='text-light display-2 fw-bold'>{generateLetters("Get in touch", false)}</h1>
+        <div id='form-section' className="vh-100 col col-12 col-lg-6 p-4 pb-lg-0 d-flex justify-content-center  flex-column">
+            <h1 className='text-light display-2 fw-bold mb-4 mb-lg-0 p-0 ps-lg-5 pe-lg-5'>{generateLetters("Get in touch", false)}</h1>
+          <form  className=' p-0 p-lg-5 ' ref={form} onSubmit={sendEmail}>
             <div className="row">
-              <div className="col-12 col-lg-6 mb-3 mb-lg-0">
+              <div className="col-12 col-lg-6 mb-3 ">
                 <CustomInput value={emailContent.user_name} type='text' name='user_name' placeholder='Name' autocomplete={'off'} handleInput={handleInput} />
               </div>
-              <div className="col-12 col-lg-6">
+              <div className="col-12 col-lg-6 mb-3 ">
                 <CustomInput value={emailContent.user_email} type='email' name='user_email' placeholder='Email' autocomplete={'off'} handleInput={handleInput} />
               </div>
             </div>
-            <CustomInput value={emailContent.subject} type='text' name='subject' placeholder='Subject' handleInput={handleInput} />
-            <CustomInput value={emailContent.message} isTextArea name='message' placeholder='Message' handleInput={handleInput} />
+            <CustomInput className="mb-3 " value={emailContent.subject} type='text' name='subject' placeholder='Subject' handleInput={handleInput} />
+            <CustomInput className="mb-3 " value={emailContent.message} isTextArea name='message' placeholder='Message' handleInput={handleInput} />
 
               <CustomButton disabled={disableButton} text="Submit" />
           </form> 

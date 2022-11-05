@@ -1,6 +1,5 @@
 import React from 'react'
 import { useRef } from 'react'
-import { useState } from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import { DataPortfolio } from '../data/DataPortfolio'
@@ -111,6 +110,11 @@ background-color: #fff;
             display: none;
         }
 
+    }
+    @media (hover: none){
+        &::before, &::after{
+            display: none;
+        }
     }
 
     img{
