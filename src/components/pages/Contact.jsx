@@ -66,8 +66,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div id='form-section' className="vh-100 col col-12 col-lg-6 p-4 pb-lg-0 d-flex justify-content-center  flex-column">
-            <h1 className='text-light display-2 fw-bold mb-4 mb-lg-0 p-0 ps-lg-5 pe-lg-5'>{generateLetters("Get in touch", false)}</h1>
+        <div id='form-section' className="vh-100 col col-12 col-lg-6 p-4 pb-lg-0 d-flex justify-content-center flex-column overflow-scroll">
+            <h1 className='text-light display-2 fw-bold mb-4 mt-4 mb-lg-0 p-0 ps-lg-5 pe-lg-5'>{generateLetters("Get in touch", false)}</h1>
           <form  className=' p-0 p-lg-5 ' ref={form} onSubmit={sendEmail}>
             <div className="row">
               <div className="col-12 col-lg-6 mb-3 ">
@@ -80,7 +80,7 @@ const Contact = () => {
             <CustomInput className="mb-3 " value={emailContent.subject} type='text' name='subject' placeholder='Subject' handleInput={handleInput} />
             <CustomInput className="mb-3 " value={emailContent.message} isTextArea name='message' placeholder='Message' handleInput={handleInput} />
 
-              <CustomButton disabled={disableButton} text="Submit" />
+              <CustomButton className={'mb-3'} disabled={disableButton} text="Submit" />
           </form> 
         </div>
 
