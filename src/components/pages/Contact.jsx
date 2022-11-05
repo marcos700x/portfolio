@@ -66,7 +66,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div id='form-section' className="vh-100 col col-12 col-lg-6 p-4 pb-lg-0 d-flex justify-content-center flex-column overflow-scroll">
+        <div id='form-section' className="col col-12 col-lg-6 p-4 pb-lg-0 d-flex justify-content-center flex-column overflow-scroll">
             <h1 className='text-light display-2 fw-bold mb-4 mt-4 mb-lg-0 p-0 ps-lg-5 pe-lg-5'>{generateLetters("Get in touch", false)}</h1>
           <form  className=' p-0 p-lg-5 ' ref={form} onSubmit={sendEmail}>
             <div className="row">
