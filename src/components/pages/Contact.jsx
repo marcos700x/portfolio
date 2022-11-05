@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Loader from '../Loader';
 import { AppContext } from '../../context/Context';
 import CustomButton from '../CustomButton';
-import GoBackButton from '../GoBackButton';
+import Menu from '../Menu';
 
 
 const Contact = () => {
@@ -51,14 +51,14 @@ const Contact = () => {
   return (
     <>
       <Loader />
+      <Menu/>
       <ToastContainer />
-      <GoBackButton/>
       <div className='row m-0'>
         <div className="vh-100 p-4 col col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center aside-contact ">
           <div className="col col-12 col-md-9 d-flex flex-column">
             <h1 className="display-1 fw-bold text-light mb-3">{generateLetters("Contact", false)}</h1>
             <p className='lead text-light fs-5 mb-4'>
-         I'm mainly interested in freelance opportunities, if you have something in mind that I can help you with, please send me a message using the form,
+            I'm currently looking for freelance opportunities, if you have something in mind that I can help you with, please send me a message using the form,
           make sure there are no typos, or I won't be able to get in touch:)
             </p>
               <CustomButton isLink={true} className="fs-5 d-lg-none text-center" href="#form-section" text={'Go to the form'}/>

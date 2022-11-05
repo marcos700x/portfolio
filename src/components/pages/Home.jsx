@@ -4,6 +4,7 @@ import WorkCard from '../WorkCard'
 import { HashLink as Link } from 'react-router-hash-link';
 import { AppContext } from '../../context/Context';
 import CustomButton from '../CustomButton';
+import Menu from '../Menu';
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <>
         <Loader />
+        <Menu/>
     <div className='vh-100 p-4 d-flex flex-column justify-content-center align-items-center'>
         <div className="row">
           <div className="col-12 col-md-8">

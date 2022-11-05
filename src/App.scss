@@ -5,6 +5,7 @@
 * {
   font-family: 'Raleway', sans-serif;
   user-select: none;
+  -webkit-user-drag: none;
   &::-webkit-scrollbar{
     display: none;
   }
@@ -35,7 +36,7 @@ section{
   background-color: #000;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 100;
 }
 
 

@@ -3,12 +3,12 @@ import { useContext } from 'react'
 import { AppContext } from '../../context/Context'
 import { DataPortfolio } from '../../data/DataPortfolio'
 import Loader from '../Loader';
-import GoBackButton from '../GoBackButton';
 import { BsGithub, BsGlobe } from 'react-icons/bs'
 import '@splidejs/react-splide/css/sea-green';
 import ScrollReveal from 'scrollreveal'
 import ScrollbarPortfolio from '../ScrollbarPortfolio';
 import { useEffect } from 'react';
+import Menu from '../Menu';
 
 const Portfolio = () => {
 
@@ -22,27 +22,27 @@ const Portfolio = () => {
       origin: 'left',
       reset: true,
       distance: '100%',
-      duration: 1500,
+      duration: 1000,
     })
     ScrollReveal().reveal(arrayTitles, {
       origin: 'left',
       reset: true,
       distance: '100%',
-      duration: 1500,
+      duration: 1000,
     })
   },[])
 
   return (
     <div className='portfolio-page'>
       <Loader />
-      <GoBackButton />
       <ScrollbarPortfolio/>
+      <Menu/>
         {
           DataPortfolio.map((obj, index) => (
             <section id={obj.title} className='d-flex justify-content-center align-items-center pe-5 me-5' key={index}>
               <div className="container container-projects  p-3 d-flex flex-column gap-3">
                 <div className='row'>
-                  <div className="col col-4 col-md-2 d-flex justify-content-start align-items-center mb-3 mb-md-0">
+                  <div className="col col-4 col-md-2 d-flex justify-content-start align-items-center">
                     <img src={obj.logo} className='w-100 project-logo' alt="" />
                   </div>
                   <div className="col col-12 mt-3 d-flex justify-content-start align-items-center">
