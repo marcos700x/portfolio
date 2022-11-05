@@ -19,9 +19,9 @@ const ScrollbarPortfolio = () => {
             var buttons = document.querySelectorAll('.project-button')
             if (scrollPercent >= 0) buttons[0].style.backgroundColor = mainColor; else buttons[0].style.backgroundColor = '#fff'
             if (scrollPercent >= 25) buttons[1].style.backgroundColor = mainColor; else buttons[1].style.backgroundColor = '#fff'
-            if (scrollPercent >= 50) buttons[2].style.backgroundColor = mainColor; else buttons[2].style.backgroundColor = '#fff'
-            if (scrollPercent >= 75) buttons[3].style.backgroundColor = mainColor; else buttons[3].style.backgroundColor = '#fff'
-            if (scrollPercent >= 100) buttons[4].style.backgroundColor = mainColor; else buttons[4].style.backgroundColor = '#fff'
+            if (scrollPercent >= 45) buttons[2].style.backgroundColor = mainColor; else buttons[2].style.backgroundColor = '#fff'
+            if (scrollPercent >= 70) buttons[3].style.backgroundColor = mainColor; else buttons[3].style.backgroundColor = '#fff'
+            if (scrollPercent >= 90) buttons[4].style.backgroundColor = mainColor; else buttons[4].style.backgroundColor = '#fff'
         }
 
     }, [])
