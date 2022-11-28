@@ -8,6 +8,7 @@ import Loader from '../Loader';
 import { AppContext } from '../../context/Context';
 import CustomButton from '../CustomButton';
 import Menu from '../Menu';
+import { AiFillGithub } from 'react-icons/ai'
 
 
 const Contact = () => {
@@ -61,6 +62,10 @@ const Contact = () => {
             I'm currently looking for freelance opportunities, if you have something in mind that I can help you with, please send me a message using the form,
           make sure there are no typos, or I won't be able to get in touch:)
             </p>
+            <div className="d-flex align-items-center gap-3 mb-4">
+            <AiFillGithub color='#fff' size="2rem"/>
+            <a href='https://github.com/marcos700x' target={'_blank'} className='text-light fs-5 m-0'>Github profile</a>
+            </div>
               <CustomButton isLink={true} className="fs-5 d-lg-none text-center" href="#form-section" text={'Go to the form'}/>
             <div className="row">
             </div>

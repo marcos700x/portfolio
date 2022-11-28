@@ -24,7 +24,7 @@ export const DataPortfolio = [
     {
         title: 'Google Keep Clone',
         logo: logo_gkeep,
-        description: "Although this website is a Google Keep clone, you can create notes, change their color, delete and search them. This project was made with React, Sass, and uses localStorage, a JavaScript property that allows storing data in the browser.",
+        description: "Although this website is a Google Keep clone, you can create notes, change their color, delete and search them. This project was made with React, Bootstrap, and uses localStorage, a JavaScript property that allows storing data in the browser.",
         links: {
             web: '',
             github: 'https://github.com/marcos700x/Google-Keep-Clone',

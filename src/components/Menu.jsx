@@ -1,7 +1,7 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { useState } from 'react'
 import { Animated } from 'react-animated-css'
+import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -9,6 +9,7 @@ import styled from 'styled-components'
 const Menu = () => {
 
 const [showMenu, setShowMenu] = useState(false)
+const location = useLocation()
 
     return (
         <>
@@ -18,13 +19,24 @@ const [showMenu, setShowMenu] = useState(false)
                 <span className="middle"></span>
                 <span className="bottom"></span>
             </StyledMenuButton>
+            <Animated className="wrapperMenu" animationIn={null}  isVisible={showMenu}>
 <Animated animationIn='slideInRight' animationInDuration={500} animationOutDuration={500} animationInDelay={0} animationOutDelay={0} animationOut='slideOutRight' isVisible={showMenu} style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 98,}}>
             <StyledMenu>
-                <Link className='fs-4' to={'/'}>Home</Link>
-                <Link className='fs-4' to={'/contact'}>Contact</Link>
-                <Link className='fs-4' to={'/portfolio'}>Portfolio</Link>
+              <div className={`containerLink ${location.pathname !== '/' ? 'opacity-50' : 'containerLinkActive'}`}>
+                <Link to={'/'}>Home</Link>
+             <span className="activeDecoration"></span> 
+              </div>
+              <div className={`containerLink ${location.pathname !== '/contact' ? 'opacity-50' : 'containerLinkActive'}`}>
+                <Link to={'/contact'}>Contact</Link>
+                <span className="activeDecoration"></span> 
+              </div>
+              <div className={`containerLink ${location.pathname !== '/portfolio' ? 'opacity-50' : 'containerLinkActive'}`}>
+                <Link to={'/portfolio'}>Portfolio</Link>
+                <span className="activeDecoration"></span> 
+              </div>
             </StyledMenu>
 </Animated>
+            </Animated>
         </>
     )
 }
@@ -34,59 +46,55 @@ position: absolute;
 top: 0;
 right: 0;
 z-index: 2;
-background-color: #08fdd8;
 backdrop-filter: blur(8px);
 height: 100vh;
+width: 250px;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+background-color: #02A28A;
+box-shadow: -20px 0 20px #00000088;
+
 @media screen and (max-width: 768px) {
-    width: 100%;
-    background-color: transparent;
-background-image: linear-gradient(90deg, #08fdd8 50%, #0a0a0a 50%) ;  
+    width: 80%;
+background-color: #02A28A;
+
+}
+.containerLink{
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 20px 40px;
+transition: all .3s ease;
+@media (hover: hover){
+  &:hover{
+    opacity: 0.8!important;
+  }
 }
 
-
-a{
-    padding: 20px 50px;
+  a{
     text-decoration: none;
-    font-size: 600;
-    text-align: center;
+    font-weight: 600;
+    text-align: right;
+    text-transform: uppercase;
     width: 100%;
     position: relative;
     transition: all .5s ease;
-            color: #000;
-    @media (hover: hover){
-        &:hover{
-            color: #08fdd8;
-            &::before{
-            animation: menuLink .5s ease-in-out forwards;
-
-            }
-        }
-        &::before{
-            content: '';
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: scaleX(0);
-            transform-origin: left;
-            background-color: #000;
-            height: 100%;
-            z-index: -1;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        text-align: right;
-        padding: 20px;
+    letter-spacing: 0.3em;
     color: #fff;
-    &::before{
-      display: none;
+  }
+  .activeDecoration{
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(90deg, #ffffff, #08FDD9);
+  }
     }
-
-    }
+.containerLinkActive{
+  &:hover{
+    opacity: 1!important;
+  }
 }
 
 `
@@ -110,7 +118,7 @@ const StyledMenuButton = styled.label`
   transform-origin: top left;
   width: 48px;
   left: 5px;
-  background-color: #000;
+  background-color: #fff;
   @media screen and (max-width: 768px){
     background-color: #fff;
   }
@@ -121,7 +129,7 @@ const StyledMenuButton = styled.label`
   width: 48px;
   bottom: -1px;
   box-shadow: 0 0 10px #495057;
-  background-color: #000;
+  background-color: #fff;
   @media screen and (max-width: 768px){
     background-color: #fff;
   }
