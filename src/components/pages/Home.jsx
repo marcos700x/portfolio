@@ -28,12 +28,12 @@ const Home = () => {
             </p>
             <div className="row gap-3">
               <div className="col col-6 col-12">
-            <Link to={'/contact'}>
+            <Link to={'/portfolio/contact'}>
             <CustomButton  text={'Contact me'}/>
             </Link>
               </div>
               <div className="col col-6 col-12 d-lg-none">
-            <Link to={'/portfolio'}>
+            <Link to={'/portfolio/projects'}>
             <CustomButton   secondary text={'My Work'}/>
             </Link>
               </div>

@@ -23,15 +23,15 @@ const location = useLocation()
 <Animated animationIn='slideInRight' animationInDuration={500} animationOutDuration={500} animationInDelay={0} animationOutDelay={0} animationOut='slideOutRight' isVisible={showMenu} style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 98,}}>
             <StyledMenu>
               <div className={`containerLink ${location.pathname !== '/' ? 'opacity-50' : 'containerLinkActive'}`}>
-                <Link to={'/'}>Home</Link>
+                <Link to={'/portfolio'}>Home</Link>
              <span className="activeDecoration"></span> 
               </div>
               <div className={`containerLink ${location.pathname !== '/contact' ? 'opacity-50' : 'containerLinkActive'}`}>
-                <Link to={'/contact'}>Contact</Link>
+                <Link to={'/portfolio/contact'}>Contact</Link>
                 <span className="activeDecoration"></span> 
               </div>
               <div className={`containerLink ${location.pathname !== '/portfolio' ? 'opacity-50' : 'containerLinkActive'}`}>
-                <Link to={'/portfolio'}>Portfolio</Link>
+                <Link to={'/portfolio/projects'}>Portfolio</Link>
                 <span className="activeDecoration"></span> 
               </div>
             </StyledMenu>

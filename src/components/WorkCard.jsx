@@ -13,7 +13,7 @@ const WorkCard = () => {
     <h2 className='text-light mt-2 ms-2'>My work</h2>
     <div className="d-flex flex-column gap-3 align-items-start h-100 ms-2">
       {
-        DataPortfolio.map((item, index) => <Link className='workLink'  key={index} to={`portfolio#${item.title}`}>{item.title}</Link>  )
+        DataPortfolio.map((item, index) => <Link className='workLink'  key={index} to={`/portfolio/projects/#${item.title}`}>{item.title}</Link>  )
       }
             {/* <a className='workLink' href="http://www.cbtis128.edu.mx/" target='_blank'>CBTIS 128</a>
             <a className='workLink' href="https://marcos700x.github.io/App-Estadistica/" target='_blank'>Stadistics App</a>
