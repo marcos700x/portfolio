@@ -33,7 +33,7 @@ font-size: 18px;
 pointer-events: ${props => props.disabled ? 'none' : 'all'};
 position: relative;
 overflow: hidden;
-transition: 500ms;
+/* transition: 500ms; */
 @media screen and (max-width: 768px){
   width: 100%;
 }
@@ -42,7 +42,6 @@ span {
   color: ${props => props.secondary ? '#000' : 'gray'};
   position: relative;
   transition: 500ms;
-  transition-delay: 500ms;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -60,7 +59,6 @@ span {
   top: 50%;
   bottom: 50%;
   transition: 500ms;
-  transition-delay: 500ms;
   background-color: #08FDD8;
   box-shadow: 0 0 10px #08FDD8,
    0 0 30px #08FDD8, 
@@ -178,7 +176,6 @@ span {
   color: gray;
   position: relative;
   transition: 500ms;
-  transition-delay: 500ms;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -196,7 +193,6 @@ span {
   z-index: -1;
   bottom: 50%;
   transition: 500ms;
-  transition-delay: 500ms;
   background-color: #08FDD8;
   box-shadow: 0 0 10px #08FDD8,
    0 0 30px #08FDD8, 

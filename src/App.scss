@@ -116,12 +116,29 @@ section{
     color: #fff;
     text-decoration: none;
     text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
-    transition: all .4s ease;
+    // transition: all .4s ease;
+    transition: all .8s ease-in-out;
+
     position: relative;
     width: fit-content;
 
-
-
+    &::after {
+      content: '';
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      background-color: variables.$mainColor;
+      transition: all .4s ease-in-out;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    &:hover{
+      &::after{
+      transform: scaleX(1);
+      }
+    }
   }
 }
 
@@ -222,7 +239,6 @@ form {
 .animated-workLink {
 
   color: rgb(210, 210, 210) !important;
-
   &::before {
     content: '';
     width: 100%;

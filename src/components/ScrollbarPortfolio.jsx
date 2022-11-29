@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
+import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
 import { DataPortfolio } from '../data/DataPortfolio'
 
@@ -33,7 +34,7 @@ const ScrollbarPortfolio = () => {
             {
 
                 DataPortfolio.map((item, index) =>
-                    <button alt={item.title} key={index} className='rounded-circle project-button'><a href={`#${item.title}`} alt={item.title}><img src={item.logo} alt="" /></a></button>
+                    <button alt={item.title} key={index} className='rounded-circle project-button'><HashLink to={`#${item.title}`} alt={item.title}><img src={item.logo} alt="" /></HashLink></button>
                 )
             }
         </StyledScrollbarPortfolio>

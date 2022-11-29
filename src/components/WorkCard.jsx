@@ -1,9 +1,11 @@
 import React from 'react'
 import { DataPortfolio } from '../data/DataPortfolio'
 import { HashLink as Link } from 'react-router-hash-link'
+import { Animated } from 'react-animated-css'
 
 const WorkCard = () => {
   return (
+    <Animated animationIn='bounceInRight' animationInDelay={1700}>
     <div className="cardWork" tabIndex={1}>
     <div className="align">
         <span className="red"></span>
@@ -15,14 +17,9 @@ const WorkCard = () => {
       {
         DataPortfolio.map((item, index) => <Link className='workLink'  key={index} to={`/portfolio/projects/#${item.title}`}>{item.title}</Link>  )
       }
-            {/* <a className='workLink' href="http://www.cbtis128.edu.mx/" target='_blank'>CBTIS 128</a>
-            <a className='workLink' href="https://marcos700x.github.io/App-Estadistica/" target='_blank'>Stadistics App</a>
-            <a className='workLink' href="https://marcos700x.github.io/app-notas-reactjs/" target='_blank'>Google Keep Clone</a>
-            <a className='workLink' href="https://marcos700x.github.io/Password-Generator/" target='_blank'>Password Generator</a>
-            <a className='workLink' href="https://marcos700x.github.io/ConversorUnidades-React/" target='_blank'>Unit Converter</a> */}
     </div>
-    
 </div>
+      </Animated>
   )
 }
 
