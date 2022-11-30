@@ -171,6 +171,9 @@ pointer-events: ${props => props.disabled ? 'none' : 'all'};
 position: relative;
 overflow: hidden;
 transition: 500ms;
+@media screen and (max-width: 768px){
+  width: 100%;
+}
 
 span {
   color: gray;
@@ -234,7 +237,7 @@ div {
   bottom: 0;
   right: 0;
 }
-@media (hover: none){
+@media screen and (max-width: 768px){
   color: #000;
   div, &::before{
     display: ${props => props.disabled ? 'none' : 'block'};

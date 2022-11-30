@@ -63,7 +63,9 @@ section{
 .animate {
   transition: variables.$transition;
 }
-
+.animateCardWork{
+  animation: bounce 2s  infinite;
+}
 /* From uiverse.io by @Fcodingx */
 .cardWork {
   width: 190px;
@@ -84,6 +86,7 @@ section{
   &:hover {
     height: 318px;
     transform: skew(0deg);
+    animation: none;
   }
 
   h2 {

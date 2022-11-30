@@ -1,11 +1,21 @@
 import React from 'react'
 import { DataPortfolio } from '../data/DataPortfolio'
 import { HashLink as Link } from 'react-router-hash-link'
-import { Animated } from 'react-animated-css'
+import { useEffect } from 'react';
 
 const WorkCard = () => {
+
+  const reAnimate = () => {
+    const workCard = document.querySelector('.cardWork');
+    workCard.classList.toggle('animateCardWork')
+  } 
+  useEffect(() => {
+    setInterval(() => {
+      reAnimate()
+    }, 2000);
+  }, [])
+
   return (
-    <Animated animationIn='bounceInRight' animationInDelay={1700}>
     <div className="cardWork" tabIndex={1}>
     <div className="align">
         <span className="red"></span>
@@ -19,7 +29,6 @@ const WorkCard = () => {
       }
     </div>
 </div>
-      </Animated>
   )
 }
 
