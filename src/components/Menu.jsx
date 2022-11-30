@@ -8,37 +8,46 @@ import styled from 'styled-components'
 
 const Menu = () => {
 
-const [showMenu, setShowMenu] = useState(false)
-const location = useLocation()
+  const [showMenu, setShowMenu] = useState(false)
+  const location = useLocation()
 
-    return (
-        <>
-            <StyledMenuButton htmlFor="check" className="bar" onChange={() => setShowMenu(!showMenu)}>
-                <input id="check" type="checkbox" />
-                <span className="top"></span>
-                <span className="middle"></span>
-                <span className="bottom"></span>
-            </StyledMenuButton>
-            <Animated className="wrapperMenu" animationIn={null}  isVisible={showMenu}>
-<Animated animationIn='slideInRight' animationInDuration={500} animationOutDuration={500} animationInDelay={0} animationOutDelay={0} animationOut='slideOutRight' isVisible={showMenu} style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 98,}}>
-            <StyledMenu>
-              <div className={`containerLink ${location.pathname !== '/portfolio' ? 'opacity-50' : 'containerLinkActive'}`}>
-                <Link to={'/portfolio'}>Home</Link>
-             <span className="activeDecoration"></span> 
-              </div>
-              <div className={`containerLink ${location.pathname !== '/portfolio/contact' ? 'opacity-50' : 'containerLinkActive'}`}>
-                <Link to={'/portfolio/contact'}>Contact</Link>
-                <span className="activeDecoration"></span> 
-              </div>
-              <div className={`containerLink ${location.pathname !== '/portfolio/projects' ? 'opacity-50' : 'containerLinkActive'}`}>
-                <Link to={'/portfolio/projects'}>Portfolio</Link>
-                <span className="activeDecoration"></span> 
-              </div>
-            </StyledMenu>
-</Animated>
-            </Animated>
-        </>
-    )
+  return (
+    <>
+      <StyledMenuButton htmlFor="check" className="bar" onChange={() => setShowMenu(!showMenu)}>
+        <input id="check" type="checkbox" />
+        <span className="top"></span>
+        <span className="middle"></span>
+        <span className="bottom"></span>
+      </StyledMenuButton>
+      <Animated className="wrapperMenu" animationIn={null} isVisible={showMenu}>
+        <Animated
+          animationIn='slideInRight'
+          animationInDuration={500}
+          animationOutDuration={500}
+          animationInDelay={0}
+          animationOutDelay={0}
+          animationOut='slideOutRight'
+          isVisible={showMenu}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', }}
+        >
+          <StyledMenu >
+            <div className={`containerLink ${location.pathname !== '/portfolio' ? 'opacity-50' : 'containerLinkActive'}`}>
+              <Link to={'/portfolio'}>Home</Link>
+              <span className="activeDecoration"></span>
+            </div>
+            <div className={`containerLink ${location.pathname !== '/portfolio/contact' ? 'opacity-50' : 'containerLinkActive'}`}>
+              <Link to={'/portfolio/contact'}>Contact</Link>
+              <span className="activeDecoration"></span>
+            </div>
+            <div className={`containerLink ${location.pathname !== '/portfolio/projects' ? 'opacity-50' : 'containerLinkActive'}`}>
+              <Link to={'/portfolio/projects'}>Portfolio</Link>
+              <span className="activeDecoration"></span>
+            </div>
+          </StyledMenu>
+        </Animated>
+      </Animated>
+    </>
+  )
 }
 
 const StyledMenu = styled.div`
