@@ -100,7 +100,7 @@ div {
   bottom: 0;
   right: 0;
 }
-@media (hover: none){
+@media screen and (max-width: 768px){
   background-color: ${props  => props.secondary ? "#000" : '#08FDD8'};
   div, &::before{
     display: ${props => props.disabled ? 'none' : 'block'};
@@ -136,7 +136,7 @@ div {
 }
 
 &:hover span {
-  color: #000;
+  color: ${props => props.secondary ? '' : '#000'};
 }
   &:hover:before {
   width: 100%;
